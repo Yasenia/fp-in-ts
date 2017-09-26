@@ -5,7 +5,7 @@ import * as ListSupport from './list-support';
 
 describe('ListSupport', () => {
 
-  describe('#sum: ', () => {
+  describe.skip('#sum: ', () => {
     it('sum of nil should be 0', () => {
       expect(ListSupport.sum(Lists.nil)).to.equal(0);
     });
@@ -14,7 +14,7 @@ describe('ListSupport', () => {
     });
   });
 
-  describe('#product: ', () => {
+  describe.skip('#product: ', () => {
     it('product of nil should be 1', () => {
       expect(ListSupport.product(Lists.nil)).to.equal(1);
     });
@@ -86,6 +86,30 @@ describe('ListSupport', () => {
     });
     it('should throw error if get init of nil', () => {
       expect(() => ListSupport.init(Lists.nil)).to.throw()
+    });
+  });
+
+  describe.skip('#length: ', () => {
+    it('length of nil should be 0', () => {
+      expect(ListSupport.length(Lists.nil)).to.equal(0);
+    });
+    it('length of [1, 2, 3, 4, 5] should be 5', () => {
+      expect(ListSupport.length(Lists.asList(1, 2, 3, 4, 5))).to.equal(5);
+    });
+  });
+
+  describe.skip('#reverse: ', () => {
+    it('should return [5, 4, 3, 2, 1] if reverse [1, 2, 3, 4, 5]', () => {
+      expect(Lists.equal(
+        ListSupport.reverse(Lists.asList(1, 2, 3, 4, 5)),
+        Lists.asList(5, 4, 3, 2, 1)
+      )).to.true;
+    });
+    it('should return nil if reverse nil', () => {
+      expect(Lists.equal(
+        ListSupport.reverse(Lists.nil),
+        Lists.nil
+      )).to.true;
     });
   });
 
