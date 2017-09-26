@@ -5,33 +5,37 @@ function sum(numbers: List<number>): number {
 }
 
 function product(numbers: List<number>): number {
-  // TODO implement the method
-  throw new Error('Method is unimplemented.');
+  return numbers.isNil ? 1 : numbers.head * product(numbers.tail);
 }
 
 function setHead<T>(list: List<T>, head: T): List<T> {
-  // TODO implement the method
-  throw new Error('Method is unimplemented.');
+  if (list.isNil) {
+    throw new Error('Cannot set head to nil.')
+  }
+  return new Cons(head, list.tail);
 }
 
 function drop<T>(list: List<T>, n: number): List<T> {
-  // TODO implement the method
-  throw new Error('Method is unimplemented.');
+  return (n === 0 || list.isNil) ? list : drop(list.tail, n - 1);
 }
 
 function dropWhile<T>(list: List<T>, condition: ((e: T) => boolean)): List<T> {
-  // TODO implement the method
-  throw new Error('Method is unimplemented.');
+  return (list.isNil || !condition(list.head)) ? list : dropWhile(list.tail, condition);
 }
 
 function append<T>(list1: List<T>, list2: List<T>): List<T> {
-  // TODO implement the method
-  throw new Error('Method is unimplemented.');
+  return list1.isNil ? list2 : new Cons(list1.head, append(list1.tail, list2));
 }
 
 function init<T>(list: List<T>): List<T> {
-  // TODO implement the method
-  throw new Error('Method is unimplemented.');
+  if (list.isNil) {
+    throw new Error('Cannot get init of nil.');
+  }
+  return list.tail.isNil ? nil : new Cons(list.head, init(list.tail));
+}
+
+function foldRight<T, S>(list: List<T>, z: S, f: ((e: T, z: S) => S)): S {
+  return list.isNil ? z : f(list.head, foldRight(list.tail, z, f));
 }
 
 export {

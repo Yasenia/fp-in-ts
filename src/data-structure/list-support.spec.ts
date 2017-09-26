@@ -14,7 +14,7 @@ describe('ListSupport', () => {
     });
   });
 
-  describe.skip('#product: ', () => {
+  describe('#product: ', () => {
     it('product of nil should be 1', () => {
       expect(ListSupport.product(Lists.nil)).to.equal(1);
     });
@@ -26,7 +26,7 @@ describe('ListSupport', () => {
     });
   });
 
-  describe.skip('#setHead: ', () => {
+  describe('#setHead: ', () => {
     it('should return [42, 2, 3, 4, 5] if set 42 as head of [1, 2, 3, 4, 5]', () => {
       expect(Lists.equal(
         ListSupport.setHead(Lists.asList(1, 2, 3, 4, 5), 42), 
@@ -38,7 +38,7 @@ describe('ListSupport', () => {
     });
   });
 
-  describe.skip('#drop: ', () => {
+  describe('#drop: ', () => {
     it('should return [3, 4, 5] if drop 2 elements of [1, 2, 3, 4, 5]', () => {
       expect(Lists.equal(
         ListSupport.drop(Lists.asList(1, 2, 3, 4, 5), 2),
@@ -50,7 +50,7 @@ describe('ListSupport', () => {
     });
   });
 
-  describe.skip('#dropWhile: ', () => {
+  describe('#dropWhile: ', () => {
     it('should return [3, 4, 5] if drop elements while less than 3 of [1, 2, 3, 4, 5]', () => {
       expect(Lists.equal(
         ListSupport.dropWhile(Lists.asList(1, 2, 3, 4, 5), i => i < 3),
@@ -62,7 +62,7 @@ describe('ListSupport', () => {
     });
   });
 
-  describe.skip('#append: ', () => {
+  describe('#append: ', () => {
     it('should return [1, 2, 3, 4, 5] if append [3, 4, 5] to [1, 2]', () => {
       expect(Lists.equal(
         ListSupport.append(Lists.asList(1, 2), Lists.asList(3, 4, 5)),
@@ -77,7 +77,7 @@ describe('ListSupport', () => {
     });
   });
 
-  describe.skip('#init: ', () => {
+  describe('#init: ', () => {
     it('should return [1, 2, 3, 4] if get init of [1, 2, 3, 4, 5]', () => {
       expect(Lists.equal(
         ListSupport.init(Lists.asList(1, 2, 3, 4, 5)),
