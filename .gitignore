@@ -1,0 +1,14 @@
+# IntelliJ IDEA files.
+/.idea
+
+# vim swap files.
+*.swp
+
+# node modules.
+/node_modules
+
+# compiled files.
+/src/**/*.js
+
+# osx metadata infomation file of folder.
+.DS_Store
